@@ -1,0 +1,437 @@
+Starting project at /Users/sukrukaya/Desktop/Antigravity_test
+Starting Metro Bundler
+warning: Bundler cache is empty, rebuilding (this may take a minute)
+The following packages should be updated for best compatibility with the installed expo version:
+  @react-native-async-storage/async-storage@3.0.1 - expected version: 2.2.0
+  @react-native-community/datetimepicker@8.6.0 - expected version: 8.4.4
+  @react-native-community/slider@5.1.2 - expected version: 5.0.1
+  react-native-gesture-handler@2.30.0 - expected version: ~2.28.0
+  react-native-reanimated@4.2.2 - expected version: ~4.1.1
+  react-native-safe-area-context@5.7.0 - expected version: ~5.6.0
+  react-native-svg@15.15.3 - expected version: 15.12.1
+Your project may not work correctly until you install the expected versions of the packages.
+Waiting on http://localhost:8086
+Logs for your project will appear below.
+Web Bundled 2426ms index.ts (1565 modules)
+ LOG  [web] Logs will appear in the browser console
+Web ./index.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 59ms index.ts (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web ./index.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Unable to resolve "./config" from "node_modules/react-native-reanimated/lib/module/css/native/style/index.js"
+[0m [90m 1 |[39m [32m'use strict'[39m[33m;[39m
+ [90m 2 |[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./config'[39m[33m;[39m
+ [90m   |[39m                [31m[1m^[22m[39m
+ [90m 4 |[39m [36mexport[39m { [36mdefault[39m [36mas[39m createStyleBuilder } [36mfrom[39m [32m'./createStyleBuilder'[39m[33m;[39m
+ [90m 5 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./processors'[39m[33m;[39m
+ [90m 6 |[39m [90m//# sourceMappingURL=index.js.map[39m[0m
+
+Import stack (2000):
+
+ node_modules/react-native-reanimated/lib/module/css/native/style/index.js
+ | import "./config"
+
+ node_modules/react-native-reanimated/lib/module/css/native/registry.js
+ | import "./style"
+
+ node_modules/react-native-reanimated/lib/module/css/native/index.js
+ | import "./registry"
+
+ node_modules/react-native-reanimated/lib/module/css/component/AnimatedComponent.js
+ | import "../native"
+
+ node_modules/react-native-reanimated/lib/module/css/component/createAnimatedComponent.js
+ | import "./AnimatedComponent"
+
+ node_modules/react-native-reanimated/lib/module/css/component/index.js
+ | import "./createAnimatedComponent"
+
+ node_modules/react-native-reanimated/lib/module/css/index.js
+ | import "./component"
+
+ node_modules/react-native-reanimated/lib/module/index.js
+ | import "./css"
+
+ node_modules/@storybook/react-native-ui/dist/index.js
+ | import "react-native-reanimated"
+
+ node_modules/@storybook/react-native/dist/index.js
+ | import "@storybook/react-native-ui"
+
+ .rnstorybook/storybook.requires.ts
+ | import "@storybook/react-native"
+
+ .rnstorybook/index.ts
+ | import "./storybook.requires"
+
+ App.tsx
+ | import "./.rnstorybook"
+
+ index.ts
+ | import "./App"
+
+ 
+ | import "./index.ts"
+
+Web Bundling failed 1226ms index.ts (1 module)
+Unable to resolve "./config" from "node_modules/react-native-reanimated/lib/module/css/native/style/index.js"
+[0m [90m 1 |[39m [32m'use strict'[39m[33m;[39m
+ [90m 2 |[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./config'[39m[33m;[39m
+ [90m   |[39m                [31m[1m^[22m[39m
+ [90m 4 |[39m [36mexport[39m { [36mdefault[39m [36mas[39m createStyleBuilder } [36mfrom[39m [32m'./createStyleBuilder'[39m[33m;[39m
+ [90m 5 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./processors'[39m[33m;[39m
+ [90m 6 |[39m [90m//# sourceMappingURL=index.js.map[39m[0m
+
+Import stack (2000):
+
+ node_modules/react-native-reanimated/lib/module/css/native/style/index.js
+ | import "./config"
+
+ node_modules/react-native-reanimated/lib/module/css/native/registry.js
+ | import "./style"
+
+ node_modules/react-native-reanimated/lib/module/css/native/index.js
+ | import "./registry"
+
+ node_modules/react-native-reanimated/lib/module/css/component/AnimatedComponent.js
+ | import "../native"
+
+ node_modules/react-native-reanimated/lib/module/css/component/createAnimatedComponent.js
+ | import "./AnimatedComponent"
+
+ node_modules/react-native-reanimated/lib/module/css/component/index.js
+ | import "./createAnimatedComponent"
+
+ node_modules/react-native-reanimated/lib/module/css/index.js
+ | import "./component"
+
+ node_modules/react-native-reanimated/lib/module/index.js
+ | import "./css"
+
+ node_modules/@storybook/react-native-ui/dist/index.js
+ | import "react-native-reanimated"
+
+ node_modules/@storybook/react-native/dist/index.js
+ | import "@storybook/react-native-ui"
+
+ .rnstorybook/storybook.requires.ts
+ | import "@storybook/react-native"
+
+ .rnstorybook/index.ts
+ | import "./storybook.requires"
+
+ App.tsx
+ | import "./.rnstorybook"
+
+ index.ts
+ | import "./App"
+
+ 
+ | import "./index.ts"
+
+Unable to resolve "./config" from "node_modules/react-native-reanimated/lib/module/css/native/style/index.js"
+[0m [90m 1 |[39m [32m'use strict'[39m[33m;[39m
+ [90m 2 |[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./config'[39m[33m;[39m
+ [90m   |[39m                [31m[1m^[22m[39m
+ [90m 4 |[39m [36mexport[39m { [36mdefault[39m [36mas[39m createStyleBuilder } [36mfrom[39m [32m'./createStyleBuilder'[39m[33m;[39m
+ [90m 5 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./processors'[39m[33m;[39m
+ [90m 6 |[39m [90m//# sourceMappingURL=index.js.map[39m[0m
+
+Import stack (2000):
+
+ node_modules/react-native-reanimated/lib/module/css/native/style/index.js
+ | import "./config"
+
+ node_modules/react-native-reanimated/lib/module/css/native/registry.js
+ | import "./style"
+
+ node_modules/react-native-reanimated/lib/module/css/native/index.js
+ | import "./registry"
+
+ node_modules/react-native-reanimated/lib/module/css/component/AnimatedComponent.js
+ | import "../native"
+
+ node_modules/react-native-reanimated/lib/module/css/component/createAnimatedComponent.js
+ | import "./AnimatedComponent"
+
+ node_modules/react-native-reanimated/lib/module/css/component/index.js
+ | import "./createAnimatedComponent"
+
+ node_modules/react-native-reanimated/lib/module/css/index.js
+ | import "./component"
+
+ node_modules/react-native-reanimated/lib/module/index.js
+ | import "./css"
+
+ node_modules/@storybook/react-native-ui/dist/index.js
+ | import "react-native-reanimated"
+
+ node_modules/@storybook/react-native/dist/index.js
+ | import "@storybook/react-native-ui"
+
+ .rnstorybook/storybook.requires.ts
+ | import "@storybook/react-native"
+
+ .rnstorybook/index.ts
+ | import "./storybook.requires"
+
+ App.tsx
+ | import "./.rnstorybook"
+
+ index.ts
+ | import "./App"
+
+ 
+ | import "./index.ts"
+
+Web Bundling failed 1223ms index.ts (1 module)
+Unable to resolve "./config" from "node_modules/react-native-reanimated/lib/module/css/native/style/index.js"
+[0m [90m 1 |[39m [32m'use strict'[39m[33m;[39m
+ [90m 2 |[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./config'[39m[33m;[39m
+ [90m   |[39m                [31m[1m^[22m[39m
+ [90m 4 |[39m [36mexport[39m { [36mdefault[39m [36mas[39m createStyleBuilder } [36mfrom[39m [32m'./createStyleBuilder'[39m[33m;[39m
+ [90m 5 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./processors'[39m[33m;[39m
+ [90m 6 |[39m [90m//# sourceMappingURL=index.js.map[39m[0m
+
+Import stack (2000):
+
+ node_modules/react-native-reanimated/lib/module/css/native/style/index.js
+ | import "./config"
+
+ node_modules/react-native-reanimated/lib/module/css/native/registry.js
+ | import "./style"
+
+ node_modules/react-native-reanimated/lib/module/css/native/index.js
+ | import "./registry"
+
+ node_modules/react-native-reanimated/lib/module/css/component/AnimatedComponent.js
+ | import "../native"
+
+ node_modules/react-native-reanimated/lib/module/css/component/createAnimatedComponent.js
+ | import "./AnimatedComponent"
+
+ node_modules/react-native-reanimated/lib/module/css/component/index.js
+ | import "./createAnimatedComponent"
+
+ node_modules/react-native-reanimated/lib/module/css/index.js
+ | import "./component"
+
+ node_modules/react-native-reanimated/lib/module/index.js
+ | import "./css"
+
+ node_modules/@storybook/react-native-ui/dist/index.js
+ | import "react-native-reanimated"
+
+ node_modules/@storybook/react-native/dist/index.js
+ | import "@storybook/react-native-ui"
+
+ .rnstorybook/storybook.requires.ts
+ | import "@storybook/react-native"
+
+ .rnstorybook/index.ts
+ | import "./storybook.requires"
+
+ App.tsx
+ | import "./.rnstorybook"
+
+ index.ts
+ | import "./App"
+
+ 
+ | import "./index.ts"
+
+Web ./index.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundling failed 1816ms index.ts (1 module)
+Unable to resolve "./config" from "node_modules/react-native-reanimated/lib/module/css/native/style/index.js"
+[0m [90m 1 |[39m [32m'use strict'[39m[33m;[39m
+ [90m 2 |[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./config'[39m[33m;[39m
+ [90m   |[39m                [31m[1m^[22m[39m
+ [90m 4 |[39m [36mexport[39m { [36mdefault[39m [36mas[39m createStyleBuilder } [36mfrom[39m [32m'./createStyleBuilder'[39m[33m;[39m
+ [90m 5 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./processors'[39m[33m;[39m
+ [90m 6 |[39m [90m//# sourceMappingURL=index.js.map[39m[0m
+
+Import stack (2000):
+
+ node_modules/react-native-reanimated/lib/module/css/native/style/index.js
+ | import "./config"
+
+ node_modules/react-native-reanimated/lib/module/css/native/registry.js
+ | import "./style"
+
+ node_modules/react-native-reanimated/lib/module/css/native/index.js
+ | import "./registry"
+
+ node_modules/react-native-reanimated/lib/module/css/component/AnimatedComponent.js
+ | import "../native"
+
+ node_modules/react-native-reanimated/lib/module/css/component/createAnimatedComponent.js
+ | import "./AnimatedComponent"
+
+ node_modules/react-native-reanimated/lib/module/css/component/index.js
+ | import "./createAnimatedComponent"
+
+ node_modules/react-native-reanimated/lib/module/css/index.js
+ | import "./component"
+
+ node_modules/react-native-reanimated/lib/module/index.js
+ | import "./css"
+
+ node_modules/@storybook/react-native-ui/dist/index.js
+ | import "react-native-reanimated"
+
+ node_modules/@storybook/react-native/dist/index.js
+ | import "@storybook/react-native-ui"
+
+ .rnstorybook/storybook.requires.ts
+ | import "@storybook/react-native"
+
+ .rnstorybook/index.ts
+ | import "./storybook.requires"
+
+ App.tsx
+ | import "./.rnstorybook"
+
+ index.ts
+ | import "./App"
+
+ 
+ | import "./index.ts"
+
+Web ./index.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundling failed 1461ms index.ts (1 module)
+Unable to resolve "./config" from "node_modules/react-native-reanimated/lib/module/css/native/style/index.js"
+[0m [90m 1 |[39m [32m'use strict'[39m[33m;[39m
+ [90m 2 |[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./config'[39m[33m;[39m
+ [90m   |[39m                [31m[1m^[22m[39m
+ [90m 4 |[39m [36mexport[39m { [36mdefault[39m [36mas[39m createStyleBuilder } [36mfrom[39m [32m'./createStyleBuilder'[39m[33m;[39m
+ [90m 5 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./processors'[39m[33m;[39m
+ [90m 6 |[39m [90m//# sourceMappingURL=index.js.map[39m[0m
+
+Import stack (2000):
+
+ node_modules/react-native-reanimated/lib/module/css/native/style/index.js
+ | import "./config"
+
+ node_modules/react-native-reanimated/lib/module/css/native/registry.js
+ | import "./style"
+
+ node_modules/react-native-reanimated/lib/module/css/native/index.js
+ | import "./registry"
+
+ node_modules/react-native-reanimated/lib/module/css/component/AnimatedComponent.js
+ | import "../native"
+
+ node_modules/react-native-reanimated/lib/module/css/component/createAnimatedComponent.js
+ | import "./AnimatedComponent"
+
+ node_modules/react-native-reanimated/lib/module/css/component/index.js
+ | import "./createAnimatedComponent"
+
+ node_modules/react-native-reanimated/lib/module/css/index.js
+ | import "./component"
+
+ node_modules/react-native-reanimated/lib/module/index.js
+ | import "./css"
+
+ node_modules/@storybook/react-native-ui/dist/index.js
+ | import "react-native-reanimated"
+
+ node_modules/@storybook/react-native/dist/index.js
+ | import "@storybook/react-native-ui"
+
+ .rnstorybook/storybook.requires.ts
+ | import "@storybook/react-native"
+
+ .rnstorybook/index.ts
+ | import "./storybook.requires"
+
+ App.tsx
+ | import "./.rnstorybook"
+
+ index.ts
+ | import "./App"
+
+ 
+ | import "./index.ts"
+
+Web ./index.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundling failed 1492ms index.ts (1 module)
+Unable to resolve "./config" from "node_modules/react-native-reanimated/lib/module/css/native/style/index.js"
+[0m [90m 1 |[39m [32m'use strict'[39m[33m;[39m
+ [90m 2 |[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./config'[39m[33m;[39m
+ [90m   |[39m                [31m[1m^[22m[39m
+ [90m 4 |[39m [36mexport[39m { [36mdefault[39m [36mas[39m createStyleBuilder } [36mfrom[39m [32m'./createStyleBuilder'[39m[33m;[39m
+ [90m 5 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./processors'[39m[33m;[39m
+ [90m 6 |[39m [90m//# sourceMappingURL=index.js.map[39m[0m
+
+Import stack (2000):
+
+ node_modules/react-native-reanimated/lib/module/css/native/style/index.js
+ | import "./config"
+
+ node_modules/react-native-reanimated/lib/module/css/native/registry.js
+ | import "./style"
+
+ node_modules/react-native-reanimated/lib/module/css/native/index.js
+ | import "./registry"
+
+ node_modules/react-native-reanimated/lib/module/css/component/AnimatedComponent.js
+ | import "../native"
+
+ node_modules/react-native-reanimated/lib/module/css/component/createAnimatedComponent.js
+ | import "./AnimatedComponent"
+
+ node_modules/react-native-reanimated/lib/module/css/component/index.js
+ | import "./createAnimatedComponent"
+
+ node_modules/react-native-reanimated/lib/module/css/index.js
+ | import "./component"
+
+ node_modules/react-native-reanimated/lib/module/index.js
+ | import "./css"
+
+ node_modules/@storybook/react-native-ui/dist/index.js
+ | import "react-native-reanimated"
+
+ node_modules/@storybook/react-native/dist/index.js
+ | import "@storybook/react-native-ui"
+
+ .rnstorybook/storybook.requires.ts
+ | import "@storybook/react-native"
+
+ .rnstorybook/index.ts
+ | import "./storybook.requires"
+
+ App.tsx
+ | import "./.rnstorybook"
+
+ index.ts
+ | import "./App"
+
+ 
+ | import "./index.ts"
+
+Web ./index.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundling failed 21ms index.ts (1 module)
+Unable to resolve "expo" from "index.ts"
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m { registerRootComponent } [36mfrom[39m [32m'expo'[39m[33m;[39m
+ [90m   |[39m                                        [31m[1m^[22m[39m
+ [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m [33mApp[39m [36mfrom[39m [32m'./App'[39m[33m;[39m
+ [90m 4 |[39m[0m
+
+Import stack:
+
+ index.ts
+ | import "expo"
+
+ 
+ | import "./index.ts"
+

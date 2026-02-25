@@ -1,32 +1,49 @@
-name: "Figma Sync Test"
+name: "Figma to Code Sync"
 
 on:
-  workflow_dispatch: # Sadece manuel olarak GitHub'dan tetikleyeceğiz
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' # Her gece saat 00:00'da çalışır
 
 jobs:
-  figma-test:
+  figma-sync:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
+        
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-
-      - name: Test Figma API Connection
+          cache: 'npm'
+          
+      - name: Install Dependencies
+        run: npm ci || npm install --legacy-peer-deps
+        
+      - name: Fetch Figma Design Tokens
         env:
           FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
         run: |
-          echo "🌐 Figma API Bağlantısı Test Ediliyor..."
-          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" -H "X-FIGMA-TOKEN: $FIGMA_ACCESS_TOKEN" "https://api.figma.com/v1/files/luq5YqCo81F5O8KTjRUEjm")
+          echo "🌐 Figma API üzerinden tasarım token'ları çekiliyor..."
+          node scripts/sync-figma-tokens.js
           
-          if [ "$HTTP_STATUS" -eq 200 ]; then
-            echo "✅ BAŞARILI: Figma dosyasına erişim sağlandı! (Status: 200)"
-            exit 0
-          else
-            echo "❌ HATA: Figma dosyasına erişilemedi. HTTP Kodu: $HTTP_STATUS"
-            echo "Figma Access Token'in 'Secrets' kısmına doğru eklendiğinden emin olun."
-            exit 1
-          fi
+      - name: Check for changes & Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(design-system): sync figma tokens"
+          title: "🎨 Design System Update: Figma Tokens Sync"
+          body: |
+            ## Figma Tasarım Sistemi Güncellemesi
+            Figma `Ready to Dev Final` dosyasında bir veya birden fazla token değişikliği (renk veya tipografi vb.) tespit edildi.
+            
+            Bu PR otomatik olarak oluşturulmuştur.
+            
+            Lütfen değişiklikleri inceleyip `main` dalına (branch) birleştirin.
+          branch: "figma-sync/tokens"
+          delete-branch: true
