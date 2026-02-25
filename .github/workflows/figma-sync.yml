@@ -1,0 +1,32 @@
+name: "Figma Sync Test"
+
+on:
+  workflow_dispatch: # Sadece manuel olarak GitHub'dan tetikleyeceğiz
+
+jobs:
+  figma-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Test Figma API Connection
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+        run: |
+          echo "🌐 Figma API Bağlantısı Test Ediliyor..."
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" -H "X-FIGMA-TOKEN: $FIGMA_ACCESS_TOKEN" "https://api.figma.com/v1/files/luq5YqCo81F5O8KTjRUEjm")
+          
+          if [ "$HTTP_STATUS" -eq 200 ]; then
+            echo "✅ BAŞARILI: Figma dosyasına erişim sağlandı! (Status: 200)"
+            exit 0
+          else
+            echo "❌ HATA: Figma dosyasına erişilemedi. HTTP Kodu: $HTTP_STATUS"
+            echo "Figma Access Token'in 'Secrets' kısmına doğru eklendiğinden emin olun."
+            exit 1
+          fi
