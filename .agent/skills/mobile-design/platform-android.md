@@ -281,7 +281,7 @@ Actions: Max 3 icons, overflow menu ( ⋮ ) for more
 │  🏠   │                             │
 │ Home  │       Content Area          │
 │       │                             │
-│  ���   │                             │
+│  🔍   │                             │
 │Search │                             │
 │       │                             │
 │  👤   │                             │
@@ -397,7 +397,7 @@ Types:
 │  Label                              │ ← Floats up on focus
 │  ________________________________________________
 │  │     Input text here...          │ ← Leading/trailing icons
-│  ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾���
+│  ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 │  Supporting text or error           │
 └─────────────────────────────────────┘
 

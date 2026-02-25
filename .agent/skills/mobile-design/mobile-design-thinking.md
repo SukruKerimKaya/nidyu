@@ -21,7 +21,7 @@
 │                                                                 │
 │  2️⃣ ANTI-DEFAULT ANALYSIS                                      │
 │     └── Am I applying a memorized pattern?                      │
-���         └── Is this pattern REALLY the best for THIS project?   │
+│         └── Is this pattern REALLY the best for THIS project?   │
 │                                                                 │
 │  3️⃣ PLATFORM DECOMPOSITION                                     │
 │     └── Did I think about iOS and Android separately?           │

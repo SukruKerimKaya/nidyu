@@ -246,7 +246,7 @@ Rules:
 
 Rules:
 ├── Back button: System chevron + previous title (or "Back")
-��── Title: Centered, dynamic font
+├── Title: Centered, dynamic font
 ├── Right actions: Max 2 items
 ├── Large title: Collapses on scroll (optional)
 └── Prefer text buttons over icons (clarity)

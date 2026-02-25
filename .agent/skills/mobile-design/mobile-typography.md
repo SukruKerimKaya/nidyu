@@ -316,7 +316,7 @@ Consider:
 ```
 AI tends to:
 ├── Use fixed px values instead of pt/sp
-��── Skip Dynamic Type support
+├── Skip Dynamic Type support
 ├── Use too small text (12-14px body)
 ├── Ignore line height settings
 ├── Use low contrast "aesthetic" grays

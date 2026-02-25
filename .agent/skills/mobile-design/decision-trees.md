@@ -72,7 +72,7 @@ WHAT ARE YOU BUILDING?
 CHOOSE NATIVE WHEN:
 ├── Maximum performance required (games, 3D)
 ├── Deep OS integration needed
-��── Platform-specific features are core
+├── Platform-specific features are core
 ├── Team has native expertise
 ├── App store presence is primary
 └── Long-term maintenance priority
@@ -156,7 +156,7 @@ WHAT'S YOUR STATE COMPLEXITY?
             └── GetX (with caution)
                 ├── Fast to implement
                 ├── Less strict patterns
-                └���─ Can become messy at scale
+                └── Can become messy at scale
 ```
 
 ### State Management Anti-Patterns
@@ -244,7 +244,7 @@ WHAT TYPE OF DATA?
         │       ├── Realm (NoSQL, reactive)
         │       └── WatermelonDB (large datasets)
         │
-        ├���─ Large files (images, documents)
+        ├── Large files (images, documents)
         │   │
         │   └── ✅ File System
         │       ├── iOS: Documents / Caches directory
