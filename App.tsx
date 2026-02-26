@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
-import { AppNavigator } from './src/navigation/AppNavigator';
 import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
-import { View, Text } from 'react-native';
+import * as ExpoSplashScreen from 'expo-splash-screen';
 import { enableScreens } from 'react-native-screens';
+import { SplashScreen } from './src/screens/SplashScreen';
 
-// Disable react-native-screens to prevent HostFunction boolean/string parse crash on New Architecture
+// Disable react-native-screens since we only have one screen
 enableScreens(false);
 
-// Keep the splash screen visible while we fetch resources
-SplashScreen.preventAutoHideAsync();
+// Keep the native splash screen visible while we fetch fonts
+ExpoSplashScreen.preventAutoHideAsync();
 
 function App() {
   const [fontsLoaded, fontError] = useFonts({
@@ -20,20 +19,16 @@ function App() {
 
   useEffect(() => {
     if (fontsLoaded || fontError) {
-      // Hide the splash screen once loading is complete or failed
-      SplashScreen.hideAsync();
+      // Hide the native splash screen once fonts are ready
+      ExpoSplashScreen.hideAsync();
     }
   }, [fontsLoaded, fontError]);
 
   if (!fontsLoaded && !fontError) {
     return null;
   }
-  if (process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true') {
-    const StorybookUIRoot = require('./.rnstorybook').default;
-    return <StorybookUIRoot />;
-  }
 
-  return <AppNavigator />;
+  return <SplashScreen />;
 }
 
 export default App;
