@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { theme } from '../../theme/theme';
 
-export const MetricsPalette = () => {
+export const SpacingRadius = () => {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.section}>

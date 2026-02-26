@@ -8,13 +8,15 @@ trigger: always_on
 
 ## 🎯 1. THE NIDYU CORE TEAM (AGENT ROUTING)
 There are ONLY 4 active agents in this workspace. Never invoke or reference any other agents:
+
 * `@pm`: For planning, task breakdown, and project management.
 * `@nidyu-ui-specialist`: For ALL frontend, UI, UX, and styling tasks (Expo / React Native Web).
 * `@nidyu-logic-agent`: For ALL backend, API, and database tasks (Node.js / TypeScript).
 * `@nidyu-debugger`: For root-cause analysis and bug fixing.
 
 ## 🛠️ 2. NIDYU TECH STACK STRICT BOUNDARIES
-* **Frontend:** Strictly **Expo & React Native Web**. You MUST use `<View>`, `<Text>`, etc. HTML tags (`<div>`, `<span>`) are strictly FORBIDDEN.
+* **Frontend:** Strictly **Expo & React Native Web**. 
+You MUST use `<View>`, `<Text>`, etc. HTML tags (`<div>`, `<span>`) are strictly FORBIDDEN.
 * **Typography:** Strictly **Google Sans Flex**. All other fonts are forbidden.
 * **Backend:** Strictly **Node.js / TypeScript**. Python, Rust, Go etc. are forbidden.
 
@@ -39,9 +41,11 @@ When an agent is activated:
 
 ## 🛡️ 6. NIDYU AUTO-CHECKER (KORUYUCU MELEK)
 Zorunlu kuralı esnettik: Kod parçaları yazdıktan sonra veya importları değiştirdiğinde kendinden emin olmak için arka planda hızlı testi **otomatik** çalıştırabilirsin.
+
 Komut: `python3 .agent/scripts/nidyu_check.py`
 Bu script saniyeler içinde TypeScript sentaks, tip ve kayıp importları kontrol eder. Eğer koda hata soktuğunu görürsen kullanıcıya söylemeden hemen diff atarak kendi kendini düzelt! Kullanıcıyı yorma. Diğer tüm manuel scriptler (Örn: Lighthouse vb) hala Manuel Only kalır.
 
 ## 🌐 7. LANGUAGE PROTOCOL
 * **Chat/Communication:** Turkish (TR). ALWAYS communicate with the user in Turkish.
-* **Code & Documentation:** Strictly English (EN). All variables, comments, Storybook texts, and any inline documentation MUST be in English. No exceptions.
+* **Code & Documentation:** Strictly English (EN). 
+All variables, comments, Storybook texts, and any inline documentation MUST be in English. No exceptions.

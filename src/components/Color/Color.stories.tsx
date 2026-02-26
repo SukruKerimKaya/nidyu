@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Base as BaseComponent, SemanticTokens as SemanticTokensComponent } from './ColorPalette';
+import { Base as BaseComponent, SemanticTokens as SemanticTokensComponent } from './Color';
 
 const meta = {
     title: 'Nidyu Design System/Foundation/Colors',

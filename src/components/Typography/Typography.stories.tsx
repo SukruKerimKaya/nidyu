@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { TypographyTokens } from './TypographyPalette';
+import { TypographyTokens } from './Typography';
 
 const meta = {
     title: 'Nidyu Design System/Foundation/Typography',

@@ -59,7 +59,10 @@ def count_files(root: Path) -> Dict[str, int]:
     exclude = {".git", "node_modules", ".next", "dist", "build", ".agent", ".gemini", "__pycache__"}
     
     for root_dir, dirs, files in os.walk(root):
-        dirs[:] = [d for d in dirs if d not in exclude]
+        # Filter directories in-place to prune effectively
+        filtered_dirs = [d for d in dirs if d not in exclude]
+        dirs.clear()
+        dirs.extend(filtered_dirs)
         stats["total"] += len(files)
         
     return stats
@@ -77,7 +80,9 @@ def detect_features(root: Path) -> List[str]:
                 for child in p.iterdir():
                     if child.is_dir():
                         features.append(child.name)
-    return features[:10] # Limit to top 10
+                        if len(features) >= 10:
+                            return features
+    return features
 
 def print_status(root: Path):
     info = analyze_package_json(root)
