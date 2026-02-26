@@ -1,0 +1,131 @@
+{
+    "display": {
+        "xlarge": {
+            "fontFamily": "GoogleSansFlex-Medium",
+            "fontSize": 48,
+            "lineHeight": 60,
+            "letterSpacing": -1
+        },
+        "large": {
+            "fontFamily": "GoogleSansFlex-Bold",
+            "fontSize": 32,
+            "lineHeight": 40,
+            "letterSpacing": 0
+        },
+        "medium": {
+            "fontFamily": "GoogleSansFlex-Bold",
+            "fontSize": 22,
+            "lineHeight": 30,
+            "letterSpacing": 0
+        }
+    },
+    "heading": {
+        "large": {
+            "fontFamily": "GoogleSansFlex-Bold",
+            "fontSize": 26,
+            "lineHeight": 36,
+            "letterSpacing": 0
+        },
+        "medium": {
+            "fontFamily": "GoogleSansFlex-Bold",
+            "fontSize": 22,
+            "lineHeight": 30,
+            "letterSpacing": 0
+        },
+        "small": {
+            "fontFamily": "GoogleSansFlex-Bold",
+            "fontSize": 18,
+            "lineHeight": 26,
+            "letterSpacing": 0
+        },
+        "xsmall": {
+            "fontFamily": "GoogleSansFlex-Bold",
+            "fontSize": 16,
+            "lineHeight": 20,
+            "letterSpacing": 0
+        }
+    },
+    "label": {
+        "large": {
+            "fontFamily": "GoogleSansFlex-Medium",
+            "fontSize": 18,
+            "lineHeight": 24,
+            "letterSpacing": 0
+        },
+        "medium": {
+            "fontFamily": "GoogleSansFlex-Medium",
+            "fontSize": 16,
+            "lineHeight": 20,
+            "letterSpacing": 0
+        },
+        "small": {
+            "fontFamily": "GoogleSansFlex-Medium",
+            "fontSize": 14,
+            "lineHeight": 16,
+            "letterSpacing": 0
+        }
+    },
+    "paragraph": {
+        "xlarge": {
+            "fontFamily": "GoogleSansFlex-Regular",
+            "fontSize": 20,
+            "lineHeight": 28,
+            "letterSpacing": 0
+        },
+        "large": {
+            "fontFamily": "GoogleSansFlex-Regular",
+            "fontSize": 18,
+            "lineHeight": 28,
+            "letterSpacing": 0
+        },
+        "medium": {
+            "fontFamily": "GoogleSansFlex-Regular",
+            "fontSize": 16,
+            "lineHeight": 24,
+            "letterSpacing": 0
+        },
+        "small": {
+            "fontFamily": "GoogleSansFlex-Regular",
+            "fontSize": 14,
+            "lineHeight": 20,
+            "letterSpacing": 0
+        },
+        "xsmall": {
+            "fontFamily": "GoogleSansFlex-Regular",
+            "fontSize": 12,
+            "lineHeight": 16,
+            "letterSpacing": 0
+        }
+    },
+    "link": {
+        "large": {
+            "fontFamily": "GoogleSansFlex-Medium",
+            "fontSize": 16,
+            "lineHeight": 24,
+            "letterSpacing": 0,
+            "textDecorationLine": "underline"
+        },
+        "medium": {
+            "fontFamily": "GoogleSansFlex-Medium",
+            "fontSize": 14,
+            "lineHeight": 20,
+            "letterSpacing": 0,
+            "textDecorationLine": "underline"
+        },
+        "small": {
+            "fontFamily": "GoogleSansFlex-Medium",
+            "fontSize": 12,
+            "lineHeight": 16,
+            "letterSpacing": 0,
+            "textDecorationLine": "underline"
+        }
+    },
+    "infoChips": {
+        "base": {
+            "fontFamily": "GoogleSansFlex-Bold",
+            "fontSize": 10,
+            "lineHeight": 12,
+            "letterSpacing": 0
+        }
+    }
+}

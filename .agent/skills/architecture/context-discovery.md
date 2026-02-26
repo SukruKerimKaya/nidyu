@@ -1,43 +1,13 @@
-# Context Discovery
+# Nidyu Context Discovery
 
-> Before suggesting any architecture, gather context.
+> STRICT RULE: The architecture is already locked as a Node.js/Expo Modular Monolith. Do NOT ask the user about project scale, team size, timeline, or microservices.
 
-## Question Hierarchy (Ask User FIRST)
+## Nidyu Feature Discovery (Ask User FIRST)
 
-1. **Scale**
-   - How many users? (10, 1K, 100K, 1M+)
-   - Data volume? (MB, GB, TB)
-   - Transaction rate? (per second/minute)
+When the user requests a new feature or module for the Nidyu App, limit your clarifying questions to the SPECIFIC business logic of that feature. Ask maximum 3 questions from this list:
 
-2. **Team**
-   - Solo developer or team?
-   - Team size and expertise?
-   - Distributed or co-located?
+1. **Data Entities:** What specific data fields/models are required for this feature? (e.g., "Does the Property Listing model need a strict geolocation field?")
+2. **UI/UX States:** What are the exact loading, error, and empty states expected for this Expo screen?
+3. **Business Rules:** Are there any specific validation rules, edge cases, or commission-free constraints for this specific transaction?
 
-3. **Timeline**
-   - MVP/Prototype or long-term product?
-   - Time to market pressure?
-
-4. **Domain**
-   - CRUD-heavy or business logic complex?
-   - Real-time requirements?
-   - Compliance/regulations?
-
-5. **Constraints**
-   - Budget limitations?
-   - Legacy systems to integrate?
-   - Technology stack preferences?
-
-## Project Classification Matrix
-
-```
-                    MVP              SaaS           Enterprise
-┌─────────────────────────────────────────────────────────────┐
-│ Scale        │ <1K           │ 1K-100K      │ 100K+        │
-│ Team         │ Solo          │ 2-10         │ 10+          │
-│ Timeline     │ Fast (weeks)  │ Medium (months)│ Long (years)│
-│ Architecture │ Simple        │ Modular      │ Distributed  │
-│ Patterns     │ Minimal       │ Selective    │ Comprehensive│
-│ Example      │ Next.js API   │ NestJS       │ Microservices│
-└─────────────────────────────────────────────────────────────┘
-```
+Do not ask more than 3 questions at once. Present them as bullet points and wait for the user to answer before writing any code or architecture plan.

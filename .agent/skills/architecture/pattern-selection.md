@@ -1,68 +1,21 @@
-# Pattern Selection Guidelines
+# Nidyu Pattern Selection Guidelines
 
-> Decision trees for choosing architectural patterns.
+> STRICT ARCHITECTURAL RULES FOR NIDYU APP. Do NOT debate or evaluate alternatives unless the user explicitly requests them.
 
-## Main Decision Tree
+## 🏛️ The Nidyu Default Architecture (MANDATORY)
 
-```
-START: What's your MAIN concern?
+For every new feature, API, or module in Nidyu, you MUST default to the following patterns. **Simplicity is better and faster.**
 
-┌─ Data Access Complexity?
-│  ├─ HIGH (complex queries, testing needed)
-│  │  → Repository Pattern + Unit of Work
-│  │  VALIDATE: Will data source change frequently?
-│  │     ├─ YES → Repository worth the indirection
-│  │     └─ NO  → Consider simpler ORM direct access
-│  └─ LOW (simple CRUD, single database)
-│     → ORM directly (Prisma, Drizzle)
-│     Simpler = Better, Faster
-│
-├─ Business Rules Complexity?
-│  ├─ HIGH (domain logic, rules vary by context)
-│  │  → Domain-Driven Design
-│  │  VALIDATE: Do you have domain experts on team?
-│  │     ├─ YES → Full DDD (Aggregates, Value Objects)
-│  │     └─ NO  → Partial DDD (rich entities, clear boundaries)
-│  └─ LOW (mostly CRUD, simple validation)
-│     → Transaction Script pattern
-│     Simpler = Better, Faster
-│
-├─ Independent Scaling Needed?
-│  ├─ YES (different components scale differently)
-│  │  → Microservices WORTH the complexity
-│  │  REQUIREMENTS (ALL must be true):
-│  │    - Clear domain boundaries
-│  │    - Team > 10 developers
-│  │    - Different scaling needs per service
-│  │  IF NOT ALL MET → Modular Monolith instead
-│  └─ NO (everything scales together)
-│     → Modular Monolith
-│     Can extract services later when proven needed
-│
-└─ Real-time Requirements?
-   ├─ HIGH (immediate updates, multi-user sync)
-   │  → Event-Driven Architecture
-   │  → Message Queue (RabbitMQ, Redis, Kafka)
-   │  VALIDATE: Can you handle eventual consistency?
-   │     ├─ YES → Event-driven valid
-   │     └─ NO  → Synchronous with polling
-   └─ LOW (eventual consistency acceptable)
-      → Synchronous (REST/GraphQL)
-      Simpler = Better, Faster
-```
+1. **Architecture Style:** `Modular Monolith`. 
+   * 🚫 **BANNED:** Microservices, Event Sourcing, CQRS. Do not suggest or implement these.
+2. **Data Access:** `Direct ORM (Prisma/Drizzle)`. 
+   * 🚫 **BANNED:** Repository Pattern, Unit of Work. Do not create unnecessary abstraction layers for simple CRUD operations.
+3. **Business Logic:** `Transaction Script` or simple services.
+   * 🚫 **BANNED:** Full Domain-Driven Design (DDD), Aggregates, strict Hexagonal Architecture.
+4. **Communication:** `Synchronous (REST/tRPC/GraphQL)`.
+   * 🚫 **BANNED:** Message Queues (RabbitMQ, Kafka) unless specifically asked for a real-time feature.
 
-## The 3 Questions (Before ANY Pattern)
-
-1. **Problem Solved**: What SPECIFIC problem does this pattern solve?
-2. **Simpler Alternative**: Is there a simpler solution?
-3. **Deferred Complexity**: Can we add this LATER when needed?
-
-## Red Flags (Anti-patterns)
-
-| Pattern | Anti-pattern | Simpler Alternative |
-|---------|-------------|-------------------|
-| Microservices | Premature splitting | Start monolith, extract later |
-| Clean/Hexagonal | Over-abstraction | Concrete first, interfaces later |
-| Event Sourcing | Over-engineering | Append-only audit log |
-| CQRS | Unnecessary complexity | Single model |
-| Repository | YAGNI for simple CRUD | ORM direct access |
+## 🚩 The 3 Iron Rules of Nidyu
+1. **Concrete First:** Write concrete code first. Introduce Interfaces/Abstract classes ONLY if there are multiple implementations right now.
+2. **YAGNI (You Aren't Gonna Need It):** Do not write code for "future scale". Write code for the exact requirements given today.
+3. **Flat over Nested:** Keep folder structures and architectural layers as flat as possible. (e.g., Route -> Service -> DB is enough).

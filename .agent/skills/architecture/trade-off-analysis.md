@@ -1,77 +1,16 @@
-# Trade-off Analysis & ADR
+# Nidyu Lean Decision Framework
 
-> Document every architectural decision with trade-offs.
+> STRICT RULE: Do NOT write formal Architecture Decision Records (ADRs). Do NOT create `docs/architecture/` folders. Do NOT use long markdown tables to compare options.
 
-## Decision Framework
+## ⚡ The Micro-Rationale Protocol
+When the user explicitly asks "Why did you choose this approach?", you must answer using ONLY this strict 3-bullet format. Never write paragraphs.
 
-For EACH architectural component, document:
+* **Decision:** [e.g., We used basic JWT instead of OAuth.]
+* **Why:** [e.g., Fastest path to MVP for the Expo frontend.]
+* **Trade-off:** [e.g., Users cannot log in with Google yet, but we saved 2 days of dev time.]
 
-```markdown
-## Architecture Decision Record
-
-### Context
-- **Problem**: [What problem are we solving?]
-- **Constraints**: [Team size, scale, timeline, budget]
-
-### Options Considered
-
-| Option | Pros | Cons | Complexity | When Valid |
-|--------|------|------|------------|-----------|
-| Option A | Benefit 1 | Cost 1 | Low | [Conditions] |
-| Option B | Benefit 2 | Cost 2 | High | [Conditions] |
-
-### Decision
-**Chosen**: [Option B]
-
-### Rationale
-1. [Reason 1 - tied to constraints]
-2. [Reason 2 - tied to requirements]
-
-### Trade-offs Accepted
-- [What we're giving up]
-- [Why this is acceptable]
-
-### Consequences
-- **Positive**: [Benefits we gain]
-- **Negative**: [Costs/risks we accept]
-- **Mitigation**: [How we'll address negatives]
-
-### Revisit Trigger
-- [When to reconsider this decision]
-```
-
-## ADR Template
-
-```markdown
-# ADR-[XXX]: [Decision Title]
-
-## Status
-Proposed | Accepted | Deprecated | Superseded by [ADR-YYY]
-
-## Context
-[What problem? What constraints?]
-
-## Decision
-[What we chose - be specific]
-
-## Rationale
-[Why - tie to requirements and constraints]
-
-## Trade-offs
-[What we're giving up - be honest]
-
-## Consequences
-- **Positive**: [Benefits]
-- **Negative**: [Costs]
-- **Mitigation**: [How to address]
-```
-
-## ADR Storage
-
-```
-docs/
-└── architecture/
-    ├── adr-001-use-nextjs.md
-    ├── adr-002-postgresql-over-mongodb.md
-    └── adr-003-adopt-repository-pattern.md
-```
+## Default Stance on Trade-offs for Nidyu
+Whenever you face a technical crossroad, automatically apply these Nidyu defaults without asking the user:
+1. **Speed over Perfection:** If an option saves time and works for an MVP, choose it.
+2. **Readability over Cleverness:** Flat code is better than abstracted code.
+3. **Ecosystem Fit over Trend:** If it works natively well with Expo (Frontend) or simple Node.js (Backend), prefer it over the "newest" complex tool.

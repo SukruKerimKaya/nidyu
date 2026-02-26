@@ -22,11 +22,11 @@ const TabNavigator = () => {
         <Tab.Navigator
             screenOptions={{
                 headerShown: false,
-                tabBarActiveTintColor: theme.colors.textDark,
-                tabBarInactiveTintColor: theme.colors.textLight,
+                tabBarActiveTintColor: theme.colors.contentPrimary,
+                tabBarInactiveTintColor: theme.colors.contentSecondary,
                 tabBarStyle: {
                     borderTopWidth: 1,
-                    borderTopColor: theme.colors.border,
+                    borderTopColor: theme.colors.borderSecondary,
                     paddingTop: 8,
                     paddingBottom: 28, // adjust for safe area manually if needed
                     height: 84,

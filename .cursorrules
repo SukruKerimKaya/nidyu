@@ -1,0 +1,5 @@
+# Global AI Rules
+
+- Write all code, comments, variables, and function names strictly in English.
+- Do not use Turkish characters (ğ, ü, ş, ı, ö, ç, Ğ, Ü, Ş, İ, Ö, Ç) anywhere inside the codebase (except for explicit localization JSONs/i18n files if required).
+- Adhere strictly to clean code principles and the "UI/UX Pro Max" design philosophy.

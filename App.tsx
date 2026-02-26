@@ -1,12 +1,6 @@
 import React, { useEffect } from 'react';
 import { AppNavigator } from './src/navigation/AppNavigator';
-import {
-  useFonts,
-  PlusJakartaSans_400Regular,
-  PlusJakartaSans_500Medium,
-  PlusJakartaSans_600SemiBold,
-  PlusJakartaSans_700Bold
-} from '@expo-google-fonts/plus-jakarta-sans';
+import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { View, Text } from 'react-native';
 import { enableScreens } from 'react-native-screens';
@@ -19,10 +13,9 @@ SplashScreen.preventAutoHideAsync();
 
 function App() {
   const [fontsLoaded, fontError] = useFonts({
-    PlusJakartaSans_400Regular,
-    PlusJakartaSans_500Medium,
-    PlusJakartaSans_600SemiBold,
-    PlusJakartaSans_700Bold,
+    'GoogleSansFlex-Regular': require('./assets/fonts/GoogleSansFlex_24pt-Regular.ttf'),
+    'GoogleSansFlex-Medium': require('./assets/fonts/GoogleSansFlex_24pt-Medium.ttf'),
+    'GoogleSansFlex-Bold': require('./assets/fonts/GoogleSansFlex_24pt-Bold.ttf'),
   });
 
   useEffect(() => {

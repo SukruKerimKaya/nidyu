@@ -1,50 +1,26 @@
-# Architecture Patterns Reference
+# Nidyu Approved Patterns Reference
 
-> Quick reference for common patterns with usage guidance.
+> STRICT RULE: These are the ONLY architectural patterns approved for the Nidyu App. Do not evaluate, suggest, or implement any other patterns (e.g., No Microservices, No CQRS, No DDD).
 
-## Data Access Patterns
+## 1. Data Access: Direct ORM
+* **Pattern:** Active Record / Direct ORM access using Prisma or Drizzle.
+* **Why:** Fastest time-to-market for MVP.
+* **Rule:** Do NOT use Repository Pattern or Unit of Work. Call the database directly from your service/logic functions.
 
-| Pattern | When to Use | When NOT to Use | Complexity |
-|---------|-------------|-----------------|------------|
-| **Active Record** | Simple CRUD, rapid prototyping | Complex queries, multiple sources | Low |
-| **Repository** | Testing needed, multiple sources | Simple CRUD, single database | Medium |
-| **Unit of Work** | Complex transactions | Simple operations | High |
-| **Data Mapper** | Complex domain, performance | Simple CRUD, rapid dev | High |
+## 2. Domain Logic: Transaction Script
+* **Pattern:** Simple procedural service functions.
+* **Why:** The real estate marketplace logic focuses on straightforward CRUD and simple status updates.
+* **Rule:** Keep business logic inside flat service files. Do not build complex Domain Models or Aggregates.
 
-## Domain Logic Patterns
+## 3. Distributed System: Modular Monolith
+* **Pattern:** Single deployable Node.js backend with logical folder separation (e.g., `/users`, `/listings`).
+* **Why:** Perfect for small teams and rapid iteration.
+* **Rule:** Do NOT suggest Microservices, Event-Driven (Kafka/RabbitMQ), or Saga patterns.
 
-| Pattern | When to Use | When NOT to Use | Complexity |
-|---------|-------------|-----------------|------------|
-| **Transaction Script** | Simple CRUD, procedural | Complex business rules | Low |
-| **Table Module** | Record-based logic | Rich behavior needed | Low |
-| **Domain Model** | Complex business logic | Simple CRUD | Medium |
-| **DDD (Full)** | Complex domain, domain experts | Simple domain, no experts | High |
+## 4. API & Communication: Synchronous REST
+* **Pattern:** Standard RESTful API (or tRPC).
+* **Why:** Native compatibility with Expo/React Native Web clients.
+* **Rule:** Do NOT use gRPC or complex GraphQL setups unless specifically commanded for a unique feature.
 
-## Distributed System Patterns
-
-| Pattern | When to Use | When NOT to Use | Complexity |
-|---------|-------------|-----------------|------------|
-| **Modular Monolith** | Small teams, unclear boundaries | Clear contexts, different scales | Medium |
-| **Microservices** | Different scales, large teams | Small teams, simple domain | Very High |
-| **Event-Driven** | Real-time, loose coupling | Simple workflows, strong consistency | High |
-| **CQRS** | Read/write performance diverges | Simple CRUD, same model | High |
-| **Saga** | Distributed transactions | Single database, simple ACID | High |
-
-## API Patterns
-
-| Pattern | When to Use | When NOT to Use | Complexity |
-|---------|-------------|-----------------|------------|
-| **REST** | Standard CRUD, resources | Real-time, complex queries | Low |
-| **GraphQL** | Flexible queries, multiple clients | Simple CRUD, caching needs | Medium |
-| **gRPC** | Internal services, performance | Public APIs, browser clients | Medium |
-| **WebSocket** | Real-time updates | Simple request/response | Medium |
-
----
-
-## Simplicity Principle
-
-**"Start simple, add complexity only when proven necessary."**
-
-- You can always add patterns later
-- Removing complexity is MUCH harder than adding it
-- When in doubt, choose simpler option
+## 💎 The Nidyu Simplicity Principle
+"Start simple. Flat is better than nested. Do not write code for hypothetical future scale; write for today's specific requirements."
